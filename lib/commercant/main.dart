@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 // import 'package:cityneed/widgets/header.dart';
 // import 'package:cityneed/widgets/custom_scaffold.dart';
-import 'package:cityneed/models/premierpage.dart';
-import 'package:cityneed/models/dexiemepage.dart';
-import 'package:cityneed/models/troisiemepage.dart';
-import 'package:cityneed/models/quatriémepage.dart';
+import 'package:cityneed/commercant/models/premierpage.dart';
+import 'package:cityneed/commercant/models/dexiemepage.dart';
+import 'package:cityneed/commercant/models/troisiemepage.dart';
+import 'package:cityneed/commercant/models/quatriémepage.dart';
 
 
 void main() {
@@ -115,6 +115,3 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
-
-
-//   } Color.fromARGB(255, 242, 20, 235) 

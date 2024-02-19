@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:cityneed/widgets/custom_scaffold.dart'; // Importation du widget de Scaffold personnalisé
-import 'package:cityneed/widgets/header.dart'; // Importation du widget d'en-tête
+import 'package:cityneed/association/widgets/custom_scaffold.dart'; // Importation du widget de Scaffold personnalisé
+import 'package:cityneed/association/widgets/header.dart'; // Importation du widget d'en-tête
 import 'package:image_picker/image_picker.dart';
 
 void main() {

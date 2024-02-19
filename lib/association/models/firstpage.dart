@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:cityneed/widgets/custom_scaffold.dart';
-import 'package:cityneed/widgets/header.dart';
+import 'package:cityneed/association/widgets/custom_scaffold.dart';
+import 'package:cityneed/association/widgets/header.dart';
 
 void main() {
   runApp(MyApp());
@@ -32,7 +32,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
           Column(
             children: <Widget>[
               CustomHeader(),
-              SizedBox(height: 25),
+              SizedBox(height: 10),
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
@@ -50,7 +50,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
                           fontFamily: 'Helvetica',
                         ),
                       ),
-                      SizedBox(height: 22),
+                      SizedBox(height: 18),
                       SizedBox(width: 90),
                       Text(
                         'Créer votre commerce et le\nrendre accessible directement\ndans la poche de vos futurs\nclients grâce à l\'application !',
@@ -86,16 +86,16 @@ class _MyCustomFormState extends State<MyCustomForm> {
               ),
             ),
               padding: EdgeInsets.only(left: 20, right: 20, bottom: 20),
-              height: 545,
+              height: 572,
               child: SingleChildScrollView(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    SizedBox(height: 26.0),
+                    SizedBox(height: 16.0),
                     Text(
-                      'Nom de votre entreprise : ',
+                      'Nom de votre association : ',
                       style: TextStyle(
-                        fontSize: 22.0,
+                        fontSize: 20.0,
                         color: Colors.black,
                         fontStyle: FontStyle.italic,
                         fontWeight: FontWeight.normal,
@@ -123,45 +123,45 @@ class _MyCustomFormState extends State<MyCustomForm> {
                         ),
                       ),
                     ),
-                    // SizedBox(height: 10.0),
-                    // Text(
-                    //   'Nom du president : ',
-                    //   style: TextStyle(
-                    //     fontSize: 20.0,
-                    //     color: Colors.black,
-                    //     fontStyle: FontStyle.italic,
-                    //     fontWeight: FontWeight.normal,
-                    //   ),
-                    // ),
-                    // SizedBox(height: 2.0),
-                    // Container(
-                    //   width: double.infinity,
-                    //   decoration: BoxDecoration(
-                    //     color: Color.fromARGB(246, 253, 211, 250),
-                    //     borderRadius: BorderRadius.circular(1.0),
-                    //     boxShadow: [
-                    //       BoxShadow(
-                    //         color: Color.fromARGB(255, 63, 63, 63).withOpacity(0.5),
-                    //         spreadRadius: 1,
-                    //         blurRadius: 4,
-                    //         offset: Offset(3, 1),
-                    //       ),
-                    //     ],
-                    //   ),
-                    //   child: TextField(
-                    //     decoration: InputDecoration(
-                    //       contentPadding: EdgeInsets.all(10.0),
-                    //       border: InputBorder.none,
-                    //     ),
-                    //   ),
-                    // ),
+                    SizedBox(height: 10.0),
+                    Text(
+                      'Nom du president : ',
+                      style: TextStyle(
+                        fontSize: 20.0,
+                        color: Colors.black,
+                        fontStyle: FontStyle.italic,
+                        fontWeight: FontWeight.normal,
+                      ),
+                    ),
+                    SizedBox(height: 2.0),
+                    Container(
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                        color: Color.fromARGB(246, 253, 211, 250),
+                        borderRadius: BorderRadius.circular(1.0),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Color.fromARGB(255, 63, 63, 63).withOpacity(0.5),
+                            spreadRadius: 1,
+                            blurRadius: 4,
+                            offset: Offset(3, 1),
+                          ),
+                        ],
+                      ),
+                      child: TextField(
+                        decoration: InputDecoration(
+                          contentPadding: EdgeInsets.all(10.0),
+                          border: InputBorder.none,
+                        ),
+                      ),
+                    ),
                       SizedBox(height: 20.0),
                       Row(
                         children: [
                           Text(
-                            'Type d\'activité : ',
+                            'Type d\'association : ',
                             style: TextStyle(
-                              fontSize: 20.0,
+                              fontSize: 18.0,
                               color: Colors.black,
                               fontStyle: FontStyle.italic,
                               fontWeight: FontWeight.normal,
@@ -235,7 +235,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
                     Text(
                       'Mots clés de votre activité :',
                       style: TextStyle(
-                        fontSize: 22.0,
+                        fontSize: 20.0,
                         color: Colors.black,
                         fontStyle: FontStyle.italic,
                         fontWeight: FontWeight.normal,
@@ -269,7 +269,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
                     Text(
                       'Votre slogan, ou votre "let\'s motive", ou comme on dit dans le coin, le "boosteur de journée" !',
                       style: TextStyle(
-                        fontSize: 18.0,
+                        fontSize: 16.0,
                         color: Colors.black,
                         fontStyle: FontStyle.italic,
                       ),
@@ -300,7 +300,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
                     Text(
                       'Description de votre activité :',
                       style: TextStyle(
-                        fontSize: 22.0,
+                        fontSize: 20.0,
                         color: Colors.black,
                         fontStyle: FontStyle.italic,
                         fontWeight: FontWeight.normal,

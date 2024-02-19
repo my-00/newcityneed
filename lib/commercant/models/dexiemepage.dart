@@ -1,85 +1,66 @@
 import 'package:flutter/material.dart';
-import 'package:cityneed/widgets/custom_scaffold.dart'; // Importation du widget de Scaffold personnalisé
-import 'package:cityneed/widgets/header.dart'; // Importation du widget d'en-tête
+import 'package:cityneed/commercant/widgets/custom_scaffold.dart'; // Importation du widget de Scaffold personnalisé
+import 'package:cityneed/commercant/widgets/header.dart'; // Importation du widget d'en-tête
 
-void main() {
-  runApp(MyApp());
+class Myquestion extends StatefulWidget { // Définition d'un StatefulWidget pour une page de questions personnalisée
+  @override
+  _MyquestionState createState() => _MyquestionState(); // Crée l'état pour la page de questions
 }
 
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Myquestion(),
-    );
-  }
-}
-
-class Myquestion extends StatefulWidget {
-  @override
-  _MyquestionState createState() => _MyquestionState();
-}
-
-class _MyquestionState extends State<Myquestion> {
-    String selectedActivity = 'Faire défiler';
+class _MyquestionState extends State<Myquestion> { // Définition de l'état pour la page de questions
+  String selectedActivity = 'Faire défiler'; // Initialise une variable pour stocker l'activité sélectionnée
 
   @override
-  Widget build(BuildContext context) {
-    return CustomScaffold(
-      // Utilisation du widget de Scaffold personnalisé
-      child: Stack(
-        children: <Widget>[
-          Column(
-            children: <Widget>[
-              CustomHeader(), // Affichage de l'en-tête personnalisé
-              SizedBox(height: 35), // Ajoute de l'espace entre l'en-tête et le conteneur de recherche
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: <Widget>[
-                  SizedBox(width: 5),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Padding(
+  Widget build(BuildContext context) { // Méthode pour construire l'interface utilisateur de la page de questions
+    return CustomScaffold( // Utilise un widget de type CustomScaffold pour la mise en page
+      child: Stack( // Utilise un Stack pour empiler des widgets les uns sur les autres
+        children: <Widget>[ // Liste des widgets à empiler
+          Column( // Utilise un widget de type Column pour aligner les enfants verticalement
+            children: <Widget>[ // Liste des enfants de la colonne
+              CustomHeader(), // Utilise un widget de type CustomHeader pour afficher un en-tête personnalisé
+              SizedBox(height: 35), // Ajoute un espace vertical de 35 pixels
+              Row( // Utilise un widget de type Row pour aligner les enfants horizontalement
+                mainAxisAlignment: MainAxisAlignment.start, // Alignement des enfants à gauche
+                children: <Widget>[ // Liste des enfants de la ligne
+                  SizedBox(width: 5), // Ajoute un espace horizontal de 5 pixels
+                  Column( // Utilise un widget de type Column pour aligner les enfants verticalement
+                    crossAxisAlignment: CrossAxisAlignment.start, // Alignement des enfants à gauche
+                    children: [ // Liste des enfants de la colonne
+                      Padding( // Ajoute un padding avec un texte
                         padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                          child: Text(
-                              'Encore quelque question pour que\ntout soit aussi parfait que la\npremière gorgée de café le lundi\nmatin -',
-                            style: TextStyle(
-                              fontSize: 24.0,
-                              color: Color.fromARGB(255, 255, 255, 255),
-                              // fontStyle: FontStyle.italic,
-                              fontWeight: FontWeight.bold,
-                            ),
+                        child: Text( // Affiche un texte
+                          'Encore quelque question pour que\ntout soit aussi parfait que la\npremière gorgée de café le lundi\nmatin -', // Contenu du texte
+                          style: TextStyle( // Style du texte
+                            fontSize: 24.0,
+                            color: Color.fromARGB(255, 255, 255, 255),
+                            fontWeight: FontWeight.bold,
                           ),
                         ),
-                      SizedBox(height: 1),
-                       Padding(
+                      ),
+                      SizedBox(height: 1), // Ajoute un espace vertical de 1 pixel
+                      Padding( // Ajoute un padding avec un texte
                         padding: const EdgeInsets.symmetric(horizontal: 24.0),
-                          child: Text(
-                              'Oui, on veut que ça soit génial ! 😉',
-                            style: TextStyle(
-                              fontSize: 24.0,
-                              color: Color.fromARGB(255, 255, 255, 255),
-                              // fontStyle: FontStyle.italic,
-                              fontWeight: FontWeight.bold,
-                            ),
+                        child: Text( // Affiche un texte
+                          'Oui, on veut que ça soit génial ! 😉', // Contenu du texte
+                          style: TextStyle( // Style du texte
+                            fontSize: 24.0,
+                            color: Color.fromARGB(255, 255, 255, 255),
+                            fontWeight: FontWeight.bold,
                           ),
                         ),
+                      ),
                     ],
                   ),
                 ],
               ),
-              SizedBox(height: 13.0),
-              Container(
-                  height: 4.5,
-                  width: MediaQuery.of(context).size.width * 0.7,
-                  color: Color(0xFFFF40FF),
-                ),
-                // SizedBox(height: 20), // Ajoute de l'espace entre l'en-tête et le conteneur de recherche
-              ],
-            ),
-
+                            SizedBox(height: 13.0), // Ajoute un espace vertical de 13 pixels
+              Container( // Utilise un conteneur pour dessiner une ligne horizontale
+                height: 4.5, // Hauteur de la ligne
+                width: MediaQuery.of(context).size.width * 0.7, // Largeur de la ligne en fonction de la largeur de l'écran
+                color: Color(0xFFFF40FF), // Couleur de la ligne
+              ),
+            ],
+          ),
           Positioned(
             left: 0,
             right: 0,
@@ -147,7 +128,6 @@ class _MyquestionState extends State<Myquestion> {
                                       // textAlign: TextAlign.left, // Alignement du texte à gauche
                             ),
                           ),
-
                         Padding(
                           padding: EdgeInsets.symmetric(horizontal: 15.0), // Contrôle de l'espacement horizontal
                           child: Container(
@@ -156,9 +136,7 @@ class _MyquestionState extends State<Myquestion> {
                             color: Color.fromARGB(255, 253, 17, 253),
                           ),
                         ),
-
                           SizedBox(width: 0.5),
-                          
                           Container(
                             width: 95,
                             height: 20, // Augmente la hauteur pour laisser de la place au texte
@@ -189,9 +167,7 @@ class _MyquestionState extends State<Myquestion> {
                         ],
                       ),
                     ),
-
                   SizedBox(height: 10.0),
-
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 10.0),
                       child: Text(
@@ -200,7 +176,6 @@ class _MyquestionState extends State<Myquestion> {
                           fontSize: 18.0,
                           color: Colors.black,
                           fontStyle: FontStyle.italic,
-                          // fontWeight: FontWeight.bold,
                         ),
                       ),
                     ),
@@ -210,8 +185,6 @@ class _MyquestionState extends State<Myquestion> {
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 15.0),
                       child: Container(
-
-                        // 
                         width: double.infinity,
                         decoration: BoxDecoration(
                           color: Color.fromARGB(255, 253, 211, 250),
@@ -224,74 +197,20 @@ class _MyquestionState extends State<Myquestion> {
                                 offset: Offset(3, 1), // changes position of shadow
                               ),
                             ],
-        // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-                        ),
-                        child:Container( 
-                          height: 40,    
-                          child: TextField(
-                            decoration: InputDecoration(
-                              border: InputBorder.none,
-                              contentPadding: EdgeInsets.all(10.0),
+                          ),
+                          child:Container( 
+                            height: 40,    
+                            child: TextField(
+                              decoration: InputDecoration(
+                                border: InputBorder.none,
+                                contentPadding: EdgeInsets.all(10.0),
+                              ),
+                              textAlignVertical: TextAlignVertical.top, // Alignement du texte vers le haut
+                              style: TextStyle(fontSize: 14.0), // Modifie la taille de la police du texte de l'utilisateur
                             ),
-                            textAlignVertical: TextAlignVertical.top, // Alignement du texte vers le haut
-                            style: TextStyle(fontSize: 14.0), // Modifie la taille de la police du texte de l'utilisateur
-                            // textAlign: TextAlign.left, // Alignement du texte à gauche
                           ),
                         ),
                       ),
-                    ),
-
-
-      //             SizedBox(height: 5),
-
-      //             Padding(
-      //               padding: const EdgeInsets.symmetric(horizontal: 10.0),
-      //               child: Text(
-      //                 'Numéro de téléphone : ',
-      //                 style: TextStyle(
-      //                   fontSize: 18.0,
-      //                   color: Colors.black,
-      //                   fontStyle: FontStyle.italic,
-      //                   // fontWeight: FontWeight.bold,
-      //                 ),
-      //               ),
-      //             ),
-
-      //             SizedBox(height: 2),
-
-      //             Padding(
-      //               padding: const EdgeInsets.symmetric(horizontal: 15.0),
-      //               child: Container(
-
-      //                 width: double.infinity,
-      //                 decoration: BoxDecoration(
-      //                   color: Color.fromARGB(255, 253, 211, 250),
-      //                   borderRadius: BorderRadius.circular(1.0),
-      //                     boxShadow: [
-      //                       BoxShadow(
-      //                         color: Color.fromARGB(255, 63, 63, 63).withOpacity(0.5),
-      //                         spreadRadius: 1,
-      //                         blurRadius: 3,
-      //                         offset: Offset(3, 1), // changes position of shadow
-      //                       ),
-      //                     ],
-      // // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-      //                 ),
-      //                 child:Container( 
-      //                   height: 40,    
-      //                   child: TextField(
-      //                     decoration: InputDecoration(
-      //                       border: InputBorder.none,
-      //                       contentPadding: EdgeInsets.all(10.0),
-      //                     ),
-      //                     textAlignVertical: TextAlignVertical.top, // Alignement du texte vers le haut
-      //                     style: TextStyle(fontSize: 14.0), // Modifie la taille de la police du texte de l'utilisateur
-      //                     // textAlign: TextAlign.left, // Alignement du texte à gauche
-      //                   ),
-      //                 ),
-      //               ),
-      //             ),
-
                   SizedBox(height: 8),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 10.0),
@@ -303,7 +222,6 @@ class _MyquestionState extends State<Myquestion> {
                             fontSize: 18.0,
                             color: Colors.black,
                             fontStyle: FontStyle.italic,
-                            // fontWeight: FontWeight.bold,
                           ),
                         ),
                         SizedBox(width: 7),
@@ -329,7 +247,6 @@ class _MyquestionState extends State<Myquestion> {
                           ),
                           textAlignVertical: TextAlignVertical.top, // Alignement du texte vers le haut
                           style: TextStyle(fontSize: 14.0), // Modifie la taille de la police du texte de l'utilisateur
-                          // textAlign: TextAlign.left, // Alignement du texte à gauche
                         ),
                       ),
                         SizedBox(width: 16),
@@ -339,7 +256,6 @@ class _MyquestionState extends State<Myquestion> {
                             fontSize: 18.0,
                             color: Colors.black,
                             fontStyle: FontStyle.italic,
-                            // fontWeight: FontWeight.bold,
                           ),
                         ),
                         SizedBox(width: 14),
@@ -367,7 +283,6 @@ class _MyquestionState extends State<Myquestion> {
                           ),
                           textAlignVertical: TextAlignVertical.top, // Alignement du texte vers le haut
                           style: TextStyle(fontSize: 14.0), // Modifie la taille de la police du texte de l'utilisateur
-                          // textAlign: TextAlign.left, // Alignement du texte à gauche
                         ),
                       ),
                         ),
@@ -477,8 +392,6 @@ class _MyquestionState extends State<Myquestion> {
   }
 }
 
-
-
 class _KeywordCheckbox extends StatefulWidget {
   final String label;
   final double fontSize; // Ajoute une variable pour la taille de la police
@@ -530,7 +443,6 @@ class __KeywordCheckboxState extends State<_KeywordCheckbox> {
             style: TextStyle(
               fontSize: widget.fontSize, // Utilise la taille de police fournie
               color: Colors.black,
-              // fontWeight: FontWeight.bold,
             ),
           ),
         ],
